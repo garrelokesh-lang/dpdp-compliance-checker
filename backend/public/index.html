@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DPDP Compliance Checker</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>DPDP Act 2023 Compliance Checker</h1>
+
+    <!-- INPUT SECTION -->
+    <div class="input-section">
+      <input type="text" id="urlInput" placeholder="Enter website URL (https://example.com)">
+      <button id="scanBtn">Scan Website</button>
+      <button onclick="loadHistory()">View Scan History</button>
+    </div>
+
+    <!-- RESULT CARD -->
+    <div class="result-card" id="resultCard" style="display:none;">
+      <h2>Scan Results</h2>
+
+      <div class="score-box">
+        <div>
+          <p class="label">Compliance Score</p>
+          <p class="score" id="score"></p>
+        </div>
+
+        <div>
+          <p class="label">Risk Level</p>
+          <p class="risk" id="risk"></p>
+        </div>
+      </div>
+
+      <ul id="issues"></ul>
+
+      <button id="downloadBtn" style="display:none;">
+        Download PDF Report
+      </button>
+    </div>
+
+    <!-- HISTORY SECTION -->
+    <div class="history-section">
+      <h2>Scan History</h2>
+      <div id="historyContainer"></div>
+    </div>
+
+  </div>
+
+  <script src="/script.js"></script>
+
+</body>
+</html>
