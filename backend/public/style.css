@@ -1,85 +1,117 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: #333;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #1e3c72, #2a5298);
 }
 
 .container {
-  width: 90%;
-  max-width: 800px;
-  margin: 60px auto;
-  background: white;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  width: 70%;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 30px;
   color: #1e3c72;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
 }
 
 .input-section {
   display: flex;
   gap: 10px;
-  margin-bottom: 30px;
+  margin: 20px 0;
 }
 
-input {
+.input-section input {
   flex: 1;
   padding: 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 button {
   padding: 12px 18px;
   border: none;
-  border-radius: 6px;
   background: #1e3c72;
   color: white;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
 }
 
 button:hover {
-  background: #16305a;
+  background: #16315d;
 }
 
-.result-card {
-  margin-top: 20px;
+.result-box {
+  margin-top: 25px;
 }
 
-.score-box {
+.top-cards {
   display: flex;
-  justify-content: space-between;
+  gap: 15px;
   margin-bottom: 20px;
 }
 
-.label {
+.card {
+  flex: 1;
+  background: #f4f7fb;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.card h3 {
+  margin: 0;
+  color: #444;
+}
+
+.card p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1e3c72;
+}
+
+.progress-bar {
+  width: 100%;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 15px 0;
+}
+
+.progress-fill {
+  height: 24px;
+  background: #2ecc71;
+  color: white;
+  text-align: center;
+  line-height: 24px;
   font-size: 14px;
-  color: #777;
 }
 
-.score {
-  font-size: 28px;
-  font-weight: bold;
-  color: #2a5298;
+.pass { color: green; }
+.fail { color: red; }
+.warn { color: #d68910; }
+
+.mapping-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
 }
 
-.risk {
-  font-size: 20px;
-  font-weight: bold;
+.mapping-table th,
+.mapping-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
 }
 
-ul {
-  margin-bottom: 20px;
-}
-
-li {
-  margin-bottom: 6px;
+.mapping-table th {
+  background: #1e3c72;
+  color: white;
 }
