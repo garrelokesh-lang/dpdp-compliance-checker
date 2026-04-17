@@ -19,7 +19,10 @@ app.get("/", (req, res) => {
 /* ===========================
    MongoDB Connection
 =========================== */
+
 mongoose.connect("mongodb://127.0.0.1:27017/dpdp")
+
+mongoose.connect("mongodb://mongo:27017/dpdp_checker")
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log("Mongo Error:", err));
 
