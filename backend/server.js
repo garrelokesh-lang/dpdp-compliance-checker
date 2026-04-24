@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
    MongoDB Connection
 =========================== */
 
-mongoose.connect("mongodb://127.0.0.1:27017/dpdp")
+
 
 mongoose.connect("mongodb://mongo:27017/dpdp_checker")
   .then(() => console.log("MongoDB Connected"))
@@ -405,7 +405,7 @@ app.get("/download/:id", async (req, res) => {
 /* ===========================
    Start Server
 =========================== */
-const PORT = 3000;
+const PORT = process.env.PORT || 3001;   // ✅ reads from environment
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
