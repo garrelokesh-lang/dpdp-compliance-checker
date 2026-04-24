@@ -2,22 +2,25 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repository') {
+        stage('Clone Repo') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/garrelokesh-lang/dpdp-compliance-checker.git'
+                git 'https://github.com/garrelokesh-lang/dpdp-compliance-checker.git'
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Install Dependencies') {
             steps {
-                sh 'docker build -t dpdp-app .'
+                dir('backend') {
+                    bat 'npm install'
+                }
             }
         }
 
-        stage('Run Docker Container') {
+        stage('Run App') {
             steps {
-                sh 'docker run -d -p 3001:3000 dpdp-app'
+                dir('backend') {
+                    bat 'npm start'
+                }
             }
         }
     }
