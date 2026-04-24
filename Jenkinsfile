@@ -16,7 +16,7 @@ pipeline {
         stage('Run App') {
             steps {
                 dir('backend') {
-                    bat 'set PORT=3001 && npm start'
+                    bat 'set PORT=3001 && set MONGO_URI=mongodb://127.0.0.1:27017/dpdp_checker && npm start'
                 }
             }
         }
