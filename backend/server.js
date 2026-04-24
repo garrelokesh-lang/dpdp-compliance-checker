@@ -20,9 +20,8 @@ app.get("/", (req, res) => {
    MongoDB Connection
 =========================== */
 
-
-
-mongoose.connect("mongodb://mongo:27017/dpdp_checker")
+const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/dpdp_checker";
+mongoose.connect(MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log("Mongo Error:", err));
 
